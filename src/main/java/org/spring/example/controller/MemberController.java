@@ -1,23 +1,24 @@
 package org.spring.example.controller;
 
-import org.spring.example.model.MemberDAO;
+import org.spring.example.mapper.MemberMapper;
 import org.spring.example.model.MemberVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
 @Controller
 public class MemberController {
     @Autowired
-    private MemberDAO dao;
+    private MemberMapper memberMapper;
 
     @RequestMapping("/memberList.do")
     public String memberList(Model model) {
-        List<MemberVO> members = dao.memberList();
+        List<MemberVO> members = memberMapper.memberList();
         model.addAttribute("members", members);
 
         return "memberList";
@@ -25,7 +26,7 @@ public class MemberController {
 
     @RequestMapping("/memberInsert.do")
     public String memberInsert(MemberVO member) {
-        dao.memberInsert(member);
+        memberMapper.memberInsert(member);
 
         return "redirect:/memberList.do";
     }
@@ -38,14 +39,14 @@ public class MemberController {
 
     @RequestMapping("/memberDelete.do")
     public String memberDelete(@RequestParam("number") int number) {
-        dao.memberDelete(number);
+        memberMapper.memberDelete(number);
 
         return "redirect:/memberList.do";
     }
 
     @RequestMapping("/memberContent.do")
     public String memberContent(@RequestParam("number") int number, Model model) {
-        MemberVO member = dao.memberContent(number);
+        MemberVO member = memberMapper.memberContent(number);
         model.addAttribute("member", member);
 
         return "memberContent";
@@ -53,8 +54,15 @@ public class MemberController {
 
     @RequestMapping("/memberUpdate.do")
     public String memberUpdate(MemberVO member) {
-        dao.memberUpdate(member);
+        memberMapper.memberUpdate(member);
 
         return "redirect:/memberList.do";
+    }
+
+    @RequestMapping("/memberAjaxList.do")
+    public @ResponseBody List<MemberVO> memberAjaxList() {
+        List<MemberVO> members = memberMapper.memberList();
+
+        return members;
     }
 }

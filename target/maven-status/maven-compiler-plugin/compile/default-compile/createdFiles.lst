@@ -1,4 +1,3 @@
+org\spring\example\mapper\MemberMapper.class
 org\spring\example\controller\MemberController.class
-org\spring\example\App.class
 org\spring\example\model\MemberVO.class
-org\spring\example\model\MemberDAO.class
