@@ -65,4 +65,10 @@ public class MemberController {
 
         return members;
     }
+
+    @RequestMapping("/form.do")
+    public String form() {
+
+        return "uploadForm";
+    }
 }

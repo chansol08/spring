@@ -24,10 +24,17 @@
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource" />
         <property name="configLocation" value="/WEB-INF/mybatis/config.xml" />
-        <property name="mapperLocations" value="classpath:mapper/*Mapper.xml" />
+        <property name="mapperLocations" value="classpath:org.spring.example/mapper/*Mapper.xml" />
     </bean>
 
     <!-- MyBatis Mapper -->
     <mybatis-spring:scan base-package="org.spring.example.mapper" />
+
+    <!-- file upload api -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="maxUploadSize" value="52428800" />
+        <property name="maxInMemorySize" value="1000000" />
+        <property name="defaultEncoding" value="utf-8" />
+    </bean>
 
 </beans>

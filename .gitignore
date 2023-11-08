@@ -26,3 +26,14 @@
 /out/artifacts/SpringExample_war_exploded/WEB-INF/lib/jackson-core-asl-1.9.13.jar
 /out/artifacts/SpringExample_war_exploded/WEB-INF/lib/jackson-databind-2.14.2.jar
 /out/artifacts/SpringExample_war_exploded/WEB-INF/lib/jackson-mapper-asl-1.9.13.jar
+/out/artifacts/SpringExample_war_exploded/WEB-INF/lib/commons-fileupload-1.3.3.jar
+/out/artifacts/SpringExample_war_exploded/WEB-INF/lib/commons-io-2.11.0.jar
+/out/artifacts/SpringExample_war_exploded/WEB-INF/classes/org/spring/example/controller/FileController.class
+/target/classes/org/spring/example/controller/FileController.class
+/out/artifacts/SpringExample_war_exploded/WEB-INF/classes/org.spring.example/mapper/MemberMapper.xml
+/target/classes/org.spring.example/mapper/MemberMapper.xml
+/out/artifacts/SpringExample_war_exploded/WEB-INF/lib/protobuf-java-3.21.9.jar
+/out/artifacts/SpringExample_war_exploded/WEB-INF/views/uploadForm.jsp
+/out/artifacts/SpringExample_war_exploded/file_repository/과제_제출예시.docx
+/out/artifacts/SpringExample_war_exploded/file_repository/데이터베이스_과제_고찬솔.docx
+/out/artifacts/SpringExample_war_exploded/WEB-INF/views/result.jsp

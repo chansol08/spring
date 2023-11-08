@@ -18,7 +18,7 @@
 </head>
 <body>
 <form action="/memberUpdate.do" method="post">
-    <input type="hidden" name="num" value="${member.number}"/>
+    <input type="hidden" name="number" value="${member.number}"/>
     <table class='table table-bordered'>
         <c:if test="${member!=null}">
             <tr>
